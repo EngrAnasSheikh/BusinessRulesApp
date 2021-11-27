@@ -59,21 +59,10 @@ namespace BusinessRulesApp
         }
 
     }
-    //Class for Products
-    public abstract class Products
-    {
-        //List Array for Physical Products
-        public List<string> PhysicalProduct { get; set; }
-
-        //List Array for Non Physical Products
-        public List<string> NonPhysicalProduct { get; set; }
-
-        //List Array for All Instructions
-        public List<string> Instructions { get; set; }
-    }
+   
 
     //Class for Physical Products
-    class PhysicalProducts : Products
+    public abstract class PhysicalProducts
     {
         //function for shipping packing slip
         public void ShipSlip()
@@ -104,7 +93,6 @@ namespace BusinessRulesApp
         //Funtion for Book
         public Book( )
         {
-            //PhysicalProduct.Add("Book");
             base.ShipSlip();
             base.RoyaltySlip();
             base.CommissionSlip();
@@ -117,47 +105,41 @@ namespace BusinessRulesApp
         //Funtion for Any Other Physical Product
         public OtherPhysicalProduct(string Other)
         {
-            PhysicalProduct.Add(Other);
             base.ShipSlip();
             base.CommissionSlip();
         }
     }
 
     //Class for Non Physcial Products
-    class NonPhysicalProducts : Products
+    public abstract class NonPhysicalProducts
     {
         //function for Memebership Activation
         public void MembershipSlip()
         {
-            Instructions.Add("Membership Activated.");
-            Console.WriteLine(Instructions[3]);
+            Console.WriteLine("Membership Activated.");
         }
 
         //function for Membership Upgrade
         public void UpgradeSlip()
         {
-            Instructions.Add("Membership Upgraded.");
-            Console.WriteLine(Instructions[4]);
+            Console.WriteLine("Membership Upgraded.");
         }
 
         //function for Email Sent
         public void EmailSlip()
         {
-            Instructions.Add("Email Sent to Owner.");
-            Console.WriteLine(Instructions[5]);
+            Console.WriteLine("Email Sent to Owner.");
         }
 
         //function for First Aid Slip
         public void FirstSlip()
         {
-            Instructions.Add("'First Aid' Video has been added.");
-            Console.WriteLine(Instructions[6]);
+            Console.WriteLine("'First Aid' Video has been added.");
         }
 
         //function for Membership
         public void Memebership()
         {
-            NonPhysicalProduct.Add("Membership");
             MembershipSlip();
             EmailSlip();
         }
@@ -165,7 +147,6 @@ namespace BusinessRulesApp
         //function for Upgrade Membership
         public void UpgradeMemebership()
         {
-            NonPhysicalProduct.Add("Upgrade Membership");
             UpgradeSlip();
             EmailSlip();
         }
@@ -173,7 +154,6 @@ namespace BusinessRulesApp
         //Function for Video
         public void Video(string vName)
         {
-            NonPhysicalProduct.Add(vName);
             if (vName.Equals("learning to ski"))
             {
                 FirstSlip();
