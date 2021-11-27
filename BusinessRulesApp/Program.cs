@@ -8,6 +8,57 @@ using System.Collections.Generic;
  */
 namespace BusinessRulesApp
 {
+    class Program
+    {
+        static void Main()
+        {
+            Menu();
+            Console.WriteLine("Enter Your Choice: ");
+            string input = Console.ReadLine();
+            Choice(input);
+        }
+
+        //function for Main Menu 
+        private static void Menu()
+        {
+            Console.WriteLine("Select the Product: ");
+            Console.WriteLine("1. Book");
+            Console.WriteLine("2. Other Physical Product");
+            Console.WriteLine("3. Membership");
+            Console.WriteLine("4. Upgrade Membership");
+            Console.WriteLine("5. Video");
+        }
+
+        public static void Choice(string input)
+        {
+            try
+            {
+                // Products pro;
+                if (input.Equals("1") || input.Equals("Book"))
+                {
+                    Book b = new Book();
+                    Console.WriteLine(b);
+                    
+                }
+                else if (input.Equals("2") || input.Equals("Other Physical Product") || input.Equals("Other"))
+                {
+                    new OtherPhysicalProduct("Other");
+                    // return pro;
+                }
+                else
+                {
+                    Console.WriteLine("Wrong Selection!");
+                    // return pro;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+        }
+
+    }
     //Class for Products
     public abstract class Products
     {
@@ -27,39 +78,48 @@ namespace BusinessRulesApp
         //function for shipping packing slip
         public void ShipSlip()
         {
-            Instructions.Add("Packing Slip for Shipping Generated");
-            Console.WriteLine(Instructions[0]);
+            Console.WriteLine("Packing Slip for Shipping Generated");
         }
 
         //Function for Royality Slip
         public void RoyaltySlip()
         {
-            Instructions.Add("Duplicate Packing Slip for Royalty Department Generated");
-            Console.WriteLine(Instructions[1]);
+            Console.WriteLine("Duplicate Packing Slip for Royalty Department Generated");
         }
 
         //function for Commission Slip
         public void CommissionSlip()
         {
-            Instructions.Add("Commission Payment to the agent Generated.");
-            Console.WriteLine(Instructions[2]);
+            Console.WriteLine("Commission Payment to the agent Generated.");
         }
 
+        
+
+        
+    }
+
+    //Book Class
+    class Book : PhysicalProducts
+    {
         //Funtion for Book
-        public void Book(string BookName)
+        public Book( )
         {
-            PhysicalProduct.Add(BookName);
-            ShipSlip();
-            RoyaltySlip();
-            CommissionSlip();
+            //PhysicalProduct.Add("Book");
+            base.ShipSlip();
+            base.RoyaltySlip();
+            base.CommissionSlip();
         }
+    }
 
+    //Other Physical Product Class
+    class OtherPhysicalProduct : PhysicalProducts
+    {
         //Funtion for Any Other Physical Product
-        public void OtherPhyscialProduct(string Other)
+        public OtherPhysicalProduct(string Other)
         {
             PhysicalProduct.Add(Other);
-            ShipSlip();
-            CommissionSlip();
+            base.ShipSlip();
+            base.CommissionSlip();
         }
     }
 
@@ -125,24 +185,6 @@ namespace BusinessRulesApp
         }
     }
 
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Menu();
-        }
-
-        //function for Main Menu 
-        private static void Menu()
-        {
-            Console.WriteLine("Select the Product: ");
-            Console.WriteLine("1. Book");
-            Console.WriteLine("2. Other Physical Product");
-            Console.WriteLine("3. Membership");
-            Console.WriteLine("4. Upgrade Membership");
-            Console.WriteLine("5. Video");
-        }
-
-    }
+    
 
 }
