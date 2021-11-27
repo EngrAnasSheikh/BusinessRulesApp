@@ -80,11 +80,7 @@ namespace BusinessRulesApp
         public void CommissionSlip()
         {
             Console.WriteLine("Commission Payment to the agent Generated.");
-        }
-
-        
-
-        
+        }   
     }
 
     //Book Class
@@ -136,23 +132,35 @@ namespace BusinessRulesApp
         {
             Console.WriteLine("'First Aid' Video has been added.");
         }
+    }
 
+    //Membership Class
+    class Membership : NonPhysicalProducts
+    {
         //function for Membership
-        public void Memebership()
+        public Membership()
         {
-            MembershipSlip();
-            EmailSlip();
+            base.MembershipSlip();
+            base.EmailSlip();
         }
+    }
 
+    //Upgrade Memebrship Class
+    class UpgradeMembership : NonPhysicalProducts
+    {
         //function for Upgrade Membership
-        public void UpgradeMemebership()
+        public UpgradeMembership()
         {
-            UpgradeSlip();
-            EmailSlip();
+            base.UpgradeSlip();
+            base.EmailSlip();
         }
+    }
 
+    //Video Class
+    class Video : NonPhysicalProducts
+    {
         //Function for Video
-        public void Video(string vName)
+        public Video(string vName)
         {
             if (vName.Equals("learning to ski"))
             {
@@ -164,7 +172,4 @@ namespace BusinessRulesApp
             }
         }
     }
-
-    
-
 }
