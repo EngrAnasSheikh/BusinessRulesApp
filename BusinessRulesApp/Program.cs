@@ -129,7 +129,20 @@ namespace BusinessRulesApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Menu();
         }
+
+        //function for Main Menu 
+        private static void Menu()
+        {
+            Console.WriteLine("Select the Product: ");
+            Console.WriteLine("1. Book");
+            Console.WriteLine("2. Other Physical Product");
+            Console.WriteLine("3. Membership");
+            Console.WriteLine("4. Upgrade Membership");
+            Console.WriteLine("5. Video");
+        }
+
     }
+
 }
