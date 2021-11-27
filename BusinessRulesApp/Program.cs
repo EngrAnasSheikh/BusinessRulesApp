@@ -21,34 +21,40 @@ namespace BusinessRulesApp
         //function for Main Menu 
         private static void Menu()
         {
-            Console.WriteLine("Select the Product: ");
+            Console.WriteLine(" ");
+            Console.WriteLine("Select the Product: Enter Number or Name");
             Console.WriteLine("1. Book");
             Console.WriteLine("2. Other Physical Product");
             Console.WriteLine("3. Membership");
             Console.WriteLine("4. Upgrade Membership");
             Console.WriteLine("5. Video");
+            Console.WriteLine("6. Exit");
+            Console.WriteLine(" ");
         }
 
         public static void Choice(string input)
         {
             try
             {
-                // Products pro;
                 if (input.Equals("1") || input.Equals("Book"))
                 {
-                    Book b = new Book();
-                    Console.WriteLine(b);
-                    
+                   new Book();
+                   Menu(); 
                 }
                 else if (input.Equals("2") || input.Equals("Other Physical Product") || input.Equals("Other"))
                 {
                     new OtherPhysicalProduct("Other");
-                    // return pro;
+                    Menu();
+                }
+                else if (input.Equals("3") || input.Equals("Membership"))
+                {
+                    new Membership();
+                    Menu();
                 }
                 else
                 {
-                    Console.WriteLine("Wrong Selection!");
-                    // return pro;
+                    Console.WriteLine("Wrong Selection! Select Again!");
+                    Menu();
                 }
             }
             catch (Exception e)
