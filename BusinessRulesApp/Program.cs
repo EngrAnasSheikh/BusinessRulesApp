@@ -62,6 +62,69 @@ namespace BusinessRulesApp
             CommissionSlip();
         }
     }
+
+    //Class for Non Physcial Products
+    class NonPhysicalProducts : Products
+    {
+        //function for Memebership Activation
+        public void MembershipSlip()
+        {
+            Instructions.Add("Membership Activated.");
+            Console.WriteLine(Instructions[3]);
+        }
+
+        //function for Membership Upgrade
+        public void UpgradeSlip()
+        {
+            Instructions.Add("Membership Upgraded.");
+            Console.WriteLine(Instructions[4]);
+        }
+
+        //function for Email Sent
+        public void EmailSlip()
+        {
+            Instructions.Add("Email Sent to Owner.");
+            Console.WriteLine(Instructions[5]);
+        }
+
+        //function for First Aid Slip
+        public void FirstSlip()
+        {
+            Instructions.Add("'First Aid' Video has been added.");
+            Console.WriteLine(Instructions[6]);
+        }
+
+        //function for Membership
+        public void Memebership()
+        {
+            NonPhysicalProduct.Add("Membership");
+            MembershipSlip();
+            EmailSlip();
+        }
+
+        //function for Upgrade Membership
+        public void UpgradeMemebership()
+        {
+            NonPhysicalProduct.Add("Upgrade Membership");
+            UpgradeSlip();
+            EmailSlip();
+        }
+
+        //Function for Video
+        public void Video(string vName)
+        {
+            NonPhysicalProduct.Add(vName);
+            if (vName.Equals("learning to ski"))
+            {
+                FirstSlip();
+            }
+            else
+            {
+                Console.WriteLine("You have added a Video");
+            }
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
