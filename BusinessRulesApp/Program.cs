@@ -39,22 +39,36 @@ namespace BusinessRulesApp
                 if (input.Equals("1") || input.Equals("Book"))
                 {
                    new Book();
-                   Menu(); 
+                   Main(); 
                 }
                 else if (input.Equals("2") || input.Equals("Other Physical Product") || input.Equals("Other"))
                 {
                     new OtherPhysicalProduct("Other");
-                    Menu();
+                    Main();
                 }
                 else if (input.Equals("3") || input.Equals("Membership"))
                 {
                     new Membership();
-                    Menu();
+                    Main();
+                }
+                else if (input.Equals("4") || input.Equals("Upgrade Membership") || input.Equals("Upgrade"))
+                {
+                    new UpgradeMembership();
+                    Main();
+                }
+                else if (input.Equals("5") || input.Equals("Video"))
+                {
+                    new Video("Video");
+                    Main();
+                }
+                else if (input.Equals("6") || input.Equals("Exit"))
+                {
+                    Environment.Exit(0);
                 }
                 else
                 {
                     Console.WriteLine("Wrong Selection! Select Again!");
-                    Menu();
+                    Main();
                 }
             }
             catch (Exception e)
