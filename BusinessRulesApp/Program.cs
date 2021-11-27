@@ -36,32 +36,38 @@ namespace BusinessRulesApp
         {
             try
             {
-                if (input.Equals("1") || input.Equals("Book"))
+                if (input.Equals("1") || input.Equals("Book") || input.Equals("book")) //Condition For selection of the Book
                 {
-                   new Book();
+                    Console.WriteLine("Enter Book Name: ");
+                    string BookName = Console.ReadLine();
+                    new Book(BookName);
                    Main(); 
                 }
-                else if (input.Equals("2") || input.Equals("Other Physical Product") || input.Equals("Other"))
+                else if (input.Equals("2") || input.Equals("Other Physical Product") || input.Equals("Other")) //Condition For selection of the Other Physical Product
                 {
-                    new OtherPhysicalProduct("Other");
+                    Console.WriteLine("Enter a Physical Product: ");
+                    string PName = Console.ReadLine();
+                    new OtherPhysicalProduct(PName);
                     Main();
                 }
-                else if (input.Equals("3") || input.Equals("Membership"))
+                else if (input.Equals("3") || input.Equals("Membership") || input.Equals("membership")) //Condition For selection of the Membership
                 {
                     new Membership();
                     Main();
                 }
-                else if (input.Equals("4") || input.Equals("Upgrade Membership") || input.Equals("Upgrade"))
+                else if (input.Equals("4") || input.Equals("Upgrade Membership") || input.Equals("Upgrade") || input.Equals("upgrade")) //Condition For selection of the Upgrade Membership
                 {
                     new UpgradeMembership();
                     Main();
                 }
-                else if (input.Equals("5") || input.Equals("Video"))
+                else if (input.Equals("5") || input.Equals("Video") || input.Equals("video")) //Condition For selection of the Video
                 {
-                    new Video("Video");
+                    Console.WriteLine("Enter Video Name: ");
+                    string VideoName = Console.ReadLine();
+                    new Video(VideoName);
                     Main();
                 }
-                else if (input.Equals("6") || input.Equals("Exit"))
+                else if (input.Equals("6") || input.Equals("Exit") || input.Equals("exit")) //Condition For selection of the Exit
                 {
                     Environment.Exit(0);
                 }
@@ -107,7 +113,7 @@ namespace BusinessRulesApp
     class Book : PhysicalProducts
     {
         //Funtion for Book
-        public Book( )
+        public Book(string book)
         {
             base.ShipSlip();
             base.RoyaltySlip();
@@ -119,7 +125,7 @@ namespace BusinessRulesApp
     class OtherPhysicalProduct : PhysicalProducts
     {
         //Funtion for Any Other Physical Product
-        public OtherPhysicalProduct(string Other)
+        public OtherPhysicalProduct(string other)
         {
             base.ShipSlip();
             base.CommissionSlip();
