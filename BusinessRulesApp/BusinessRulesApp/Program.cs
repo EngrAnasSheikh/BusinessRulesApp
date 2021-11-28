@@ -208,6 +208,7 @@ namespace BusinessRulesApp
         //Function for Video
         public Video(string vName)
         {
+            NonPhyProductName = vName;
             if (vName.Equals("learning to ski"))
             {
                 FirstSlip();

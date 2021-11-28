@@ -44,5 +44,14 @@ namespace BusinessAppUnitTestNew
             Assert.AreEqual("Membership Upgraded.", check.NonPhyInstructions[1]);
             Assert.AreEqual("Email Sent to Owner.", check.NonPhyInstructions[2]);
         }
+
+        //Unit Testing for Video Class Condition else
+        [TestMethod]
+        public void VideoTest1()
+        {
+            var check = new Video("SuperMan");
+            Assert.AreEqual("SuperMan", check.NonPhyProductName);
+            Assert.AreEqual("You have added a Video", check.NonPhyInstructions[4]);
+        }
     }
 }
