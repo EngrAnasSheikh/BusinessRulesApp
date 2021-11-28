@@ -8,7 +8,7 @@ using System.Collections.Generic;
  */
 namespace BusinessRulesApp
 {
-    class Program
+    public class Program
     {
         static void Main()
         {
