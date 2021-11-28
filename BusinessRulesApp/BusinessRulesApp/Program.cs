@@ -91,33 +91,29 @@ namespace BusinessRulesApp
     public abstract class PhysicalProducts
     {
         //Name for Physical Products
-        public string ProductName;
-        //Array for Instructions
-        public string[] Instructions = {"Packing Slip for Shipping Generated.", 
+        public string PhyProductName;
+        //Array for Physical Products Instructions
+        public string[] PhyInstructions = {"Packing Slip for Shipping Generated.", 
             "Duplicate Packing Slip for Royalty Department Generated.",
             "Commission Payment to the agent Generated.",
-            "Membership Activated.",
-            "Membership Upgraded.",
-            "Email Sent to Owner.",
-            "'First Aid' Video has been added."
         };
        
         //function for shipping packing slip
         public void ShipSlip()
         {
-            Console.WriteLine(Instructions[0]);
+            Console.WriteLine(PhyInstructions[0]);
         }
 
         //Function for Royality Slip
         public void RoyaltySlip()
         {
-            Console.WriteLine(Instructions[1]);
+            Console.WriteLine(PhyInstructions[1]);
         }
 
         //function for Commission Slip
         public void CommissionSlip()
         {
-            Console.WriteLine(Instructions[2]);
+            Console.WriteLine(PhyInstructions[2]);
         }   
     }
 
@@ -127,7 +123,7 @@ namespace BusinessRulesApp
         //Funtion for Book
         public Book(string book)
         {
-            ProductName = book;
+            PhyProductName = book;
             base.ShipSlip();
             base.RoyaltySlip();
             base.CommissionSlip();
@@ -140,7 +136,7 @@ namespace BusinessRulesApp
         //Funtion for Any Other Physical Product
         public OtherPhysicalProduct(string other)
         {
-            ProductName = other;
+            PhyProductName = other;
             base.ShipSlip();
             base.CommissionSlip();
         }
@@ -149,28 +145,38 @@ namespace BusinessRulesApp
     //Class for Non Physcial Products
     public abstract class NonPhysicalProducts
     {
+        //Name for Non Physical Products
+        public string NonPhyProductName;
+        //Array for Non Physcial Instructions
+        public string[] NonPhyInstructions = {
+            "Membership Activated.",
+            "Membership Upgraded.",
+            "Email Sent to Owner.",
+            "'First Aid' Video has been added.",
+            "You have added a Video"
+        };
         //function for Memebership Activation
         public void MembershipSlip()
         {
-            Console.WriteLine(Instructions[3]);
+            Console.WriteLine(NonPhyInstructions[0]);
         }
 
         //function for Membership Upgrade
         public void UpgradeSlip()
         {
-            Console.WriteLine("Membership Upgraded.");
+            Console.WriteLine(NonPhyInstructions[1]);
         }
 
         //function for Email Sent
         public void EmailSlip()
         {
-            Console.WriteLine("Email Sent to Owner.");
+            Console.WriteLine(NonPhyInstructions[2]);
         }
 
         //function for First Aid Slip
         public void FirstSlip()
         {
-            Console.WriteLine("'First Aid' Video has been added.");
+            Console.WriteLine(NonPhyInstructions[3]);
         }
     }
 
@@ -208,7 +214,7 @@ namespace BusinessRulesApp
             }
             else
             {
-                Console.WriteLine("You have added a Video");
+                Console.WriteLine(NonPhyInstructions[4]);
             }
         }
     }
