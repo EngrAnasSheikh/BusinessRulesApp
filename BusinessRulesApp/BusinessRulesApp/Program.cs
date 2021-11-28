@@ -85,15 +85,22 @@ namespace BusinessRulesApp
         }
 
     }
-   
+
 
     //Class for Physical Products
     public abstract class PhysicalProducts
     {
+        //Name for Physical Products
+        public string ProductName;
+        //List Array for Instructions
+        public List<string> Instructions;
+        public void AddInstructions() { 
+        Instructions.Add("Packing Slip for Shipping Generated.");
+            }
         //function for shipping packing slip
         public void ShipSlip()
         {
-            Console.WriteLine("Packing Slip for Shipping Generated");
+            Console.WriteLine("Packing Slip for Shipping Generated.");
         }
 
         //Function for Royality Slip
@@ -110,11 +117,12 @@ namespace BusinessRulesApp
     }
 
     //Book Class
-    class Book : PhysicalProducts
+    public class Book : PhysicalProducts
     {
         //Funtion for Book
         public Book(string book)
         {
+            ProductName = book;
             base.ShipSlip();
             base.RoyaltySlip();
             base.CommissionSlip();
@@ -127,6 +135,7 @@ namespace BusinessRulesApp
         //Funtion for Any Other Physical Product
         public OtherPhysicalProduct(string other)
         {
+            ProductName = other;
             base.ShipSlip();
             base.CommissionSlip();
         }
