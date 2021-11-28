@@ -27,5 +27,13 @@ namespace BusinessAppUnitTestNew
             Assert.AreEqual("Commission Payment to the agent Generated.", check.PhyInstructions[2]);
         }
 
+        //Unit Testing for Membership Class
+        [TestMethod]
+        public void MembershipTest()
+        {
+            var check = new Membership();
+            Assert.AreEqual("Membership Activated.", check.NonPhyInstructions[0]);
+            Assert.AreEqual("Email Sent to Owner.", check.NonPhyInstructions[2]);
+        }
     }
 }
