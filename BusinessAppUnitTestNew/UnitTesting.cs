@@ -35,5 +35,14 @@ namespace BusinessAppUnitTestNew
             Assert.AreEqual("Membership Activated.", check.NonPhyInstructions[0]);
             Assert.AreEqual("Email Sent to Owner.", check.NonPhyInstructions[2]);
         }
+
+        //Unit Testing for Upgrade Membership Class
+        [TestMethod]
+        public void UpgradeMembershipTest()
+        {
+            var check = new UpgradeMembership();
+            Assert.AreEqual("Membership Upgraded.", check.NonPhyInstructions[1]);
+            Assert.AreEqual("Email Sent to Owner.", check.NonPhyInstructions[2]);
+        }
     }
 }
