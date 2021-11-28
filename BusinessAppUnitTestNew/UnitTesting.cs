@@ -16,5 +16,16 @@ namespace BusinessAppUnitTestNew
             Assert.AreEqual("Duplicate Packing Slip for Royalty Department Generated.", check.PhyInstructions[1]);
             Assert.AreEqual("Commission Payment to the agent Generated.", check.PhyInstructions[2]);
         }
+
+        //Unit Testing for OtherPhysicalProducts Class
+        [TestMethod]
+        public void OtherPhysicalProductsTest()
+        {
+            var check = new OtherPhysicalProduct("Bat");
+            Assert.AreEqual("Bat", check.PhyProductName);
+            Assert.AreEqual("Packing Slip for Shipping Generated.", check.PhyInstructions[0]);
+            Assert.AreEqual("Commission Payment to the agent Generated.", check.PhyInstructions[2]);
+        }
+
     }
 }

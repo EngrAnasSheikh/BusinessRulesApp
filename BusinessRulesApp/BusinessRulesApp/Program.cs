@@ -131,7 +131,7 @@ namespace BusinessRulesApp
     }
 
     //Other Physical Product Class
-    class OtherPhysicalProduct : PhysicalProducts
+    public class OtherPhysicalProduct : PhysicalProducts
     {
         //Funtion for Any Other Physical Product
         public OtherPhysicalProduct(string other)
@@ -181,7 +181,7 @@ namespace BusinessRulesApp
     }
 
     //Membership Class
-    class Membership : NonPhysicalProducts
+    public class Membership : NonPhysicalProducts
     {
         //function for Membership
         public Membership()
@@ -192,7 +192,7 @@ namespace BusinessRulesApp
     }
 
     //Upgrade Memebrship Class
-    class UpgradeMembership : NonPhysicalProducts
+    public class UpgradeMembership : NonPhysicalProducts
     {
         //function for Upgrade Membership
         public UpgradeMembership()
@@ -203,7 +203,7 @@ namespace BusinessRulesApp
     }
 
     //Video Class
-    class Video : NonPhysicalProducts
+    public class Video : NonPhysicalProducts
     {
         //Function for Video
         public Video(string vName)
