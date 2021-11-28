@@ -92,27 +92,32 @@ namespace BusinessRulesApp
     {
         //Name for Physical Products
         public string ProductName;
-        //List Array for Instructions
-        public List<string> Instructions;
-        public void AddInstructions() { 
-        Instructions.Add("Packing Slip for Shipping Generated.");
-            }
+        //Array for Instructions
+        public string[] Instructions = {"Packing Slip for Shipping Generated.", 
+            "Duplicate Packing Slip for Royalty Department Generated.",
+            "Commission Payment to the agent Generated.",
+            "Membership Activated.",
+            "Membership Upgraded.",
+            "Email Sent to Owner.",
+            "'First Aid' Video has been added."
+        };
+       
         //function for shipping packing slip
         public void ShipSlip()
         {
-            Console.WriteLine("Packing Slip for Shipping Generated.");
+            Console.WriteLine(Instructions[0]);
         }
 
         //Function for Royality Slip
         public void RoyaltySlip()
         {
-            Console.WriteLine("Duplicate Packing Slip for Royalty Department Generated");
+            Console.WriteLine(Instructions[1]);
         }
 
         //function for Commission Slip
         public void CommissionSlip()
         {
-            Console.WriteLine("Commission Payment to the agent Generated.");
+            Console.WriteLine(Instructions[2]);
         }   
     }
 
@@ -147,7 +152,7 @@ namespace BusinessRulesApp
         //function for Memebership Activation
         public void MembershipSlip()
         {
-            Console.WriteLine("Membership Activated.");
+            Console.WriteLine(Instructions[3]);
         }
 
         //function for Membership Upgrade

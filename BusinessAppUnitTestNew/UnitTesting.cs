@@ -11,7 +11,7 @@ namespace BusinessAppUnitTestNew
         {
             var check = new Book("Programming");
             Assert.AreEqual("Programming", check.ProductName);
-            //Assert.AreEqual("Packing Slip for Shipping Generated.", check.Instructions[0]);
+            Assert.AreEqual("Packing Slip for Shipping Generated.", check.Instructions[0]);
         }
     }
 }
